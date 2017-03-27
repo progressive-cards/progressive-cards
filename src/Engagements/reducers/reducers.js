@@ -3,7 +3,7 @@ function deals(state = {},action){
       sate: action.state,
       data: action.data
   });
-  return newState;
+  return action.type === 'deals' ? newState : state;
 };
 
 export default deals;

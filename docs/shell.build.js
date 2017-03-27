@@ -63,26 +63,26 @@
 /******/ 	__webpack_require__.p = ".";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 127);
+/******/ 	return __webpack_require__(__webpack_require__.s = 163);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 112:
+/***/ 148:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 113:
+/***/ 149:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "manifest.json";
 
 /***/ }),
 
-/***/ 114:
+/***/ 150:
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(global, factory) {
@@ -574,7 +574,7 @@ module.exports = __webpack_require__.p + "manifest.json";
 
 /***/ }),
 
-/***/ 115:
+/***/ 151:
 /***/ (function(module, exports) {
 
 var serviceWorkerOption = {"scriptURL":"/sw.js"};
@@ -601,18 +601,18 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 127:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_loader_name_name_ext_web_app_manifest_loader_manifest_json__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_loader_name_name_ext_web_app_manifest_loader_manifest_json__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_loader_name_name_ext_web_app_manifest_loader_manifest_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_file_loader_name_name_ext_web_app_manifest_loader_manifest_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shell_scss__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shell_scss__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shell_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__shell_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_serviceworker_webpack_plugin_lib_runtime__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_serviceworker_webpack_plugin_lib_runtime__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_serviceworker_webpack_plugin_lib_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_serviceworker_webpack_plugin_lib_runtime__);
 
 

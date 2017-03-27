@@ -2,12 +2,11 @@ var serviceWorkerOption = {
   "assets": [
     "/manifest.json",
     "/london-bridge-oasis.jpg",
-    "/speed.png",
+    "/b2707ecda8186c65aa3f48758cb6d9d9.png",
     "/content.build.js",
     "/shell.build.js",
     "/shell.css",
-    "/content.css",
-    "/index.html"
+    "/content.css"
   ]
 };
         
@@ -102,7 +101,7 @@ var serviceWorkerOption = {
 
 
 var globalOptions = __webpack_require__(1);
-var idbCacheExpiration = __webpack_require__(9);
+var idbCacheExpiration = __webpack_require__(8);
 
 function debug(message, options) {
   options = options || {};
@@ -366,7 +365,7 @@ module.exports = {
 */
 
 
-var Route = __webpack_require__(11);
+var Route = __webpack_require__(10);
 var helpers = __webpack_require__(0);
 
 function regexEscape(s) {
@@ -555,8 +554,8 @@ module.exports = cacheOnly;
 var options = __webpack_require__(1);
 var router = __webpack_require__(2);
 var helpers = __webpack_require__(0);
-var strategies = __webpack_require__(14);
-var listeners = __webpack_require__(10);
+var strategies = __webpack_require__(13);
+var listeners = __webpack_require__(9);
 
 helpers.debug('Service Worker Toolbox is loading');
 
@@ -1036,114 +1035,6 @@ function pathToRegexp (path, keys, options) {
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-/**
- * Copyright 2015 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
-(function() {
-  var nativeAddAll = Cache.prototype.addAll;
-  var userAgent = navigator.userAgent.match(/(Firefox|Chrome)\/(\d+\.)/);
-
-  // Has nice behavior of `var` which everyone hates
-  if (userAgent) {
-    var agent = userAgent[1];
-    var version = parseInt(userAgent[2]);
-  }
-
-  if (
-    nativeAddAll && (!userAgent ||
-      (agent === 'Firefox' && version >= 46) ||
-      (agent === 'Chrome'  && version >= 50)
-    )
-  ) {
-    return;
-  }
-
-  Cache.prototype.addAll = function addAll(requests) {
-    var cache = this;
-
-    // Since DOMExceptions are not constructable:
-    function NetworkError(message) {
-      this.name = 'NetworkError';
-      this.code = 19;
-      this.message = message;
-    }
-
-    NetworkError.prototype = Object.create(Error.prototype);
-
-    return Promise.resolve().then(function() {
-      if (arguments.length < 1) throw new TypeError();
-
-      // Simulate sequence<(Request or USVString)> binding:
-      var sequence = [];
-
-      requests = requests.map(function(request) {
-        if (request instanceof Request) {
-          return request;
-        }
-        else {
-          return String(request); // may throw TypeError
-        }
-      });
-
-      return Promise.all(
-        requests.map(function(request) {
-          if (typeof request === 'string') {
-            request = new Request(request);
-          }
-
-          var scheme = new URL(request.url).protocol;
-
-          if (scheme !== 'http:' && scheme !== 'https:') {
-            throw new NetworkError("Invalid scheme");
-          }
-
-          return fetch(request.clone());
-        })
-      );
-    }).then(function(responses) {
-      // If some of the responses has not OK-eish status,
-      // then whole operation should reject
-      if (responses.some(function(response) {
-        return !response.ok;
-      })) {
-        throw new NetworkError('Incorrect response status');
-      }
-
-      // TODO: check that requests don't overwrite one another
-      // (don't think this is possible to polyfill due to opaque responses)
-      return Promise.all(
-        responses.map(function(response, i) {
-          return cache.put(requests[i], response);
-        })
-      );
-    }).then(function() {
-      return undefined;
-    });
-  };
-
-  Cache.prototype.add = function add(request) {
-    return this.addAll([request]);
-  };
-}());
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1308,7 +1199,7 @@ module.exports = {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1330,7 +1221,7 @@ module.exports = {
 
 
 // For cache.addAll.
-__webpack_require__(8);
+__webpack_require__(16);
 
 var helpers = __webpack_require__(0);
 var router = __webpack_require__(2);
@@ -1390,7 +1281,7 @@ module.exports = {
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1457,7 +1348,7 @@ module.exports = Route;
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1500,7 +1391,7 @@ module.exports = cacheFirst;
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1560,7 +1451,7 @@ module.exports = fastest;
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -1579,16 +1470,16 @@ module.exports = fastest;
 	limitations under the License.
 */
 module.exports = {
-  networkOnly: __webpack_require__(16),
-  networkFirst: __webpack_require__(15),
+  networkOnly: __webpack_require__(15),
+  networkFirst: __webpack_require__(14),
   cacheOnly: __webpack_require__(3),
-  cacheFirst: __webpack_require__(12),
-  fastest: __webpack_require__(13)
+  cacheFirst: __webpack_require__(11),
+  fastest: __webpack_require__(12)
 };
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1692,7 +1583,7 @@ module.exports = networkFirst;
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1721,6 +1612,114 @@ function networkOnly(request, values, options) {
 
 module.exports = networkOnly;
 
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+/**
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+(function() {
+  var nativeAddAll = Cache.prototype.addAll;
+  var userAgent = navigator.userAgent.match(/(Firefox|Chrome)\/(\d+\.)/);
+
+  // Has nice behavior of `var` which everyone hates
+  if (userAgent) {
+    var agent = userAgent[1];
+    var version = parseInt(userAgent[2]);
+  }
+
+  if (
+    nativeAddAll && (!userAgent ||
+      (agent === 'Firefox' && version >= 46) ||
+      (agent === 'Chrome'  && version >= 50)
+    )
+  ) {
+    return;
+  }
+
+  Cache.prototype.addAll = function addAll(requests) {
+    var cache = this;
+
+    // Since DOMExceptions are not constructable:
+    function NetworkError(message) {
+      this.name = 'NetworkError';
+      this.code = 19;
+      this.message = message;
+    }
+
+    NetworkError.prototype = Object.create(Error.prototype);
+
+    return Promise.resolve().then(function() {
+      if (arguments.length < 1) throw new TypeError();
+
+      // Simulate sequence<(Request or USVString)> binding:
+      var sequence = [];
+
+      requests = requests.map(function(request) {
+        if (request instanceof Request) {
+          return request;
+        }
+        else {
+          return String(request); // may throw TypeError
+        }
+      });
+
+      return Promise.all(
+        requests.map(function(request) {
+          if (typeof request === 'string') {
+            request = new Request(request);
+          }
+
+          var scheme = new URL(request.url).protocol;
+
+          if (scheme !== 'http:' && scheme !== 'https:') {
+            throw new NetworkError("Invalid scheme");
+          }
+
+          return fetch(request.clone());
+        })
+      );
+    }).then(function(responses) {
+      // If some of the responses has not OK-eish status,
+      // then whole operation should reject
+      if (responses.some(function(response) {
+        return !response.ok;
+      })) {
+        throw new NetworkError('Incorrect response status');
+      }
+
+      // TODO: check that requests don't overwrite one another
+      // (don't think this is possible to polyfill due to opaque responses)
+      return Promise.all(
+        responses.map(function(response, i) {
+          return cache.put(requests[i], response);
+        })
+      );
+    }).then(function() {
+      return undefined;
+    });
+  };
+
+  Cache.prototype.add = function add(request) {
+    return this.addAll([request]);
+  };
+}());
 
 /***/ })
 /******/ ]);

@@ -5,7 +5,6 @@ import React from 'react'
 
 const mapStateToProps = (state,ownProps) => {
   let deals = state.deals || {};
-
   return {
     engagements: deals.data || []
   };
