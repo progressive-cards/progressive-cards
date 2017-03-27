@@ -2,7 +2,7 @@ import HTTP from './HTTP.js'
 
 const Deals = {
   get: function(){
-    return HTTP.get('//localhost:3000/rover');
+    return HTTP.get('//quiet-thicket-57017.herokuapp.com/');
   }
 }
 
