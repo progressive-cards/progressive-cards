@@ -11788,7 +11788,7 @@ var AppRoutes = function AppRoutes() {
 
 var Deals = {
   get: function get() {
-    return __WEBPACK_IMPORTED_MODULE_0__HTTP_js__["a" /* default */].get('//localhost:3000/rover');
+    return __WEBPACK_IMPORTED_MODULE_0__HTTP_js__["a" /* default */].get('//quiet-thicket-57017.herokuapp.com');
   }
 };
 
