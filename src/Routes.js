@@ -27,7 +27,7 @@ const AppRoutes = () => { return (
     <Provider store={store} >
       <Router history={ browserHistory } >
         <Route path="/" component={ EngagementsContainer } >
-          <Route path="/hello" component={ EngagementViewContainer } />
+          <Route path="/hello/3435" component={ EngagementViewContainer } />
         </Route>
       </Router>
     </Provider>

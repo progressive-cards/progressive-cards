@@ -5,12 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const combineLoaders = require('webpack-combine-loaders');
+const env = require('node-env-file');
+env(__dirname + '/.env');
 const NODE_ENV = process.env.NODE_ENV;
+
 const isDev = NODE_ENV === 'development';
 const isProd = NODE_ENV === 'production';
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
+console.log('Is it production or development mode ? That is ' +  NODE_ENV );
 // import .env variables to global space
 const dotEnvVars = dotenv.config().parsed;
 const defines =
@@ -83,7 +87,7 @@ const config = {
 		new ExtractTextPlugin({ filename: '[name].css' } ),
 		new webpack.DefinePlugin({
           "process.env": {
-             NODE_ENV: JSON.stringify("development")
+             NODE_ENV: JSON.stringify(NODE_ENV)
            }
         }),
         new ServiceWorkerWebpackPlugin({
@@ -99,7 +103,7 @@ const config = {
 	},
 };
 
-if (false) {
+if (!isProd) {
 	config.entry.unshift(
 		'react-hot-loader/patch',
 		'webpack/hot/only-dev-server');
@@ -114,7 +118,7 @@ if (false) {
 	config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
-if (false) {
+if (isProd) {
 	config.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 

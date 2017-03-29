@@ -67,3 +67,28 @@
 .animi-card {
   top: 56px;
 }
+
+.mdl-card.notification-card {
+  min-height: initial;
+  height: 75px;
+  .mdl-card__title-text h2{
+   font-size: 1.5rem;
+   margin: 0;
+   line-height: 40px;
+  }
+}
+
+
+.deal-card.mdl-card {
+  width: 100%;
+  .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background-size: 100%;
+  }
+  .price {
+    font-size: 1.7rem;
+  }
+}
+
+
