@@ -6,6 +6,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 import EngagementsContainer from './Engagements/EngagementsContainer.js'
 import EngagementViewContainer from './Engagements/EngagementViewContainer.js'
+import NotificationViewContainer from './Notifications/NotificationViewContainer.js'
 import EngagementReducer from './Engagements/reducers/reducers.js'
 import thunk from 'redux-thunk'
 
@@ -17,7 +18,6 @@ const store = createStore(
   }),
   applyMiddleware(thunk),
 );
-
 store.subscribe( state => console.log(state) );
 
 // Create an enhanced history that syncs navigation events with the store
@@ -27,7 +27,9 @@ const AppRoutes = () => { return (
     <Provider store={store} >
       <Router history={ browserHistory } >
         <Route path="/" component={ EngagementsContainer } >
-          <Route path="/hello/3435" component={ EngagementViewContainer } />
+          <Route path="notification/4444" component={ NotificationViewContainer } />
+          <Route path="deal/4444" component={ EngagementViewContainer } />
+          <Route path="promotion/4444" component={ EngagementViewContainer } />
         </Route>
       </Router>
     </Provider>

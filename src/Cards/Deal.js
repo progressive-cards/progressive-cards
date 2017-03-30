@@ -19,7 +19,7 @@ export default class Deal extends React.Component {
                 Mauris sagittis pellentesque lacus eleifend lacinia...
               </div>
               <div className="mdl-card__actions mdl-card--border">
-                <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" to="/hello/3435" >
+                <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" to="deal/4444" >
                   Book Now
                 </Link>
               </div>

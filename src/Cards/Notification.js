@@ -1,12 +1,17 @@
 import React from 'react'
 import Ripple from 'react-ink'
+import { browserHistory, Link } from 'react-router';
 
 export default class Notification extends React.Component {
 
   render(){
     return (<div className="mdl-cell mdl-cell--12-phone mdl-shadow--2dp" draggable="true" >
 
-             <div className="mdl-card engagement-card " >
+             <div className="mdl-card engagement-card notification-card" role="button"  >
+               <Link to="notification/4444" style={{
+                 color: 'inherit',
+                 textDecoration: 'none'
+               }} >
                <Ripple></Ripple>
                <div className="mdl-card__title">
                  <div>
@@ -19,6 +24,7 @@ export default class Notification extends React.Component {
                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                  Nulla malesuada faucibus mauris, quis finibus metus mollis vitae.
                </p>
+               </Link>
                </div>
             </div>
             );
