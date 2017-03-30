@@ -2,6 +2,7 @@ import React from 'react'
 import Engagement from './Engagement.js'
 import Notification from 'Cards/Notification'
 import Deal from 'Cards/Deal'
+import LatestDeals from 'LatestDeals/LatestDeals'
 
 export default class EngagementsList extends React.Component {
   constructor(props){
@@ -9,7 +10,8 @@ export default class EngagementsList extends React.Component {
     this.cardMap = {
       'NOTIFICATION': Notification,
       'ENGAGEMENT': Engagement,
-      'DEAL': Deal
+      'DEAL': Deal,
+      'LATEST_DEALS': LatestDeals
     }
   }
 

@@ -1,20 +1,19 @@
 import React from 'react'
 import { browserHistory, Link } from 'react-router';
-import Ripple from 'commons/Ripple'
 
-export default class Notification extends React.Component {
+export default class LatestDeals extends React.Component {
 
   render(){
     return (<div className="mdl-cell mdl-cell--12-phone mdl-shadow--2dp" draggable="true" >
+
              <div className="mdl-card engagement-card notification-card" role="button"  >
                <Link to="notification/4444" style={{
                  color: 'inherit',
                  textDecoration: 'none'
                }} >
-               <Ripple></Ripple>
                <div className="mdl-card__title">
                  <div>
-                   <span className="mdl-typography--subhead" > Notification </span>
+                   <span className="mdl-typography--subhead" > Latest Deals </span>
                    <h3>{ this.props.title }</h3>
                  </div>
                  <div className="image" ><img src={ this.props.image } alt="London" /></div>

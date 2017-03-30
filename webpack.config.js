@@ -35,8 +35,9 @@ const config = {
 	},
 	output: {
 		filename: '[name].build.js',
+	    chunkFilename: '[name]-[id].js',
 		path: path.join(__dirname, 'docs'),
-		publicPath: '.',
+		publicPath: '/',
 	},
 	module: {
 		loaders: [{
@@ -46,11 +47,12 @@ const config = {
 		},
 		{
 			test: /\.(png|jpg)?$/,
-			exclude: /node_modules/,
+			exclude: /(node_modules|src\/assets)/,
 			loaders: ['file-loader?name=[name].[ext]'],
 		},{
 			test: /\.(png|jpg)?$/,
 			include: /src\/assets/,
+			exclude: /node_modules/,
 			loaders: ['url-loader?limit=10000'],
 		},
 		{
@@ -107,7 +109,7 @@ const config = {
 	},
 };
 
-if (!isProd) {
+if (false) {
 	config.entry.unshift(
 		'react-hot-loader/patch',
 		'webpack/hot/only-dev-server');
