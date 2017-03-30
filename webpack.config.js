@@ -48,6 +48,10 @@ const config = {
 			test: /\.(png|jpg)?$/,
 			exclude: /node_modules/,
 			loaders: ['file-loader?name=[name].[ext]'],
+		},{
+			test: /\.(png|jpg)?$/,
+			include: /src/assets/,
+			loaders: ['url-loader?limit=10000'],
 		},
 		{
 			test: /\.scss$/,
