@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import arrowImage from 'url-loader?limit=10000!assests/ic_arrow_back_black_36dp.png';
+import arrowImage from 'url-loader?limit=10000!assets/ic_arrow_back_black_36dp.png';
 
 export default class EngagementView extends React.Component {
 
