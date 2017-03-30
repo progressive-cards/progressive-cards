@@ -50,7 +50,7 @@ const config = {
 			loaders: ['file-loader?name=[name].[ext]'],
 		},{
 			test: /\.(png|jpg)?$/,
-			include: /src/assets/,
+			include: /src\/assets/,
 			loaders: ['url-loader?limit=10000'],
 		},
 		{
