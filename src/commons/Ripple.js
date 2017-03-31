@@ -14,7 +14,10 @@ export default class Ripple extends React.Component {
     var self = this;
     load( (Ink) => {
       self.setState({
-        Ripple: <Ink></Ink>
+        Ripple: <Ink
+          opacity={ 0.05 }
+          duration={ 500 }
+        ></Ink>
       });
     });
   }

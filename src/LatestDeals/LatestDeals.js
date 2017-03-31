@@ -1,5 +1,6 @@
 import React from 'react'
 import { browserHistory, Link } from 'react-router';
+import Ripple from 'commons/Ripple'
 
 export default class LatestDeals extends React.Component {
 
@@ -11,6 +12,7 @@ export default class LatestDeals extends React.Component {
                  color: 'inherit',
                  textDecoration: 'none'
                }} >
+               <Ripple></Ripple>
                <div className="mdl-card__title">
                  <div>
                    <span className="mdl-typography--subhead" > Latest Deals </span>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { browserHistory, Link } from 'react-router';
 import Ripple from 'commons/Ripple'
+import image from 'assets/flight_delay.png'
 
 export default class Notification extends React.Component {
 
@@ -17,11 +18,10 @@ export default class Notification extends React.Component {
                    <span className="mdl-typography--subhead" > Notification </span>
                    <h3>{ this.props.title }</h3>
                  </div>
-                 <div className="image" ><img src={ this.props.image } alt="London" /></div>
+                 <div className="image" ><img src={ image } alt="London" /></div>
                </div>
                <p className="mdl-card__supporting-text" >
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Nulla malesuada faucibus mauris, quis finibus metus mollis vitae.
+                 Your flight AI 111 Will be departure at 04:00 AM today
                </p>
                </Link>
                </div>
