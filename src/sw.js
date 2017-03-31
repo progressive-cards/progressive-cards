@@ -12,6 +12,10 @@ self.addEventListener('push', function(event) {
     icon: pushImage,
     badge: pushImage
   };
+  var promise = self.registration.showNotification(title, options);
+  event.waitUntil(promise);
+});
 
-  event.waitUntil(self.registration.showNotification(title, options));
+self.addEventListener('notificationclick', function(event) {
+  clients.openWindow('/');
 });
