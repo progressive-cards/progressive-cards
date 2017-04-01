@@ -47,21 +47,23 @@
 }
 
 .cardexpand-enter {
-  transform: translate(0,100%);
+  will-change: transform;
+  transform: translateY(100%);
 }
 
 .cardexpand-enter.cardexpand-enter-active {
-  transform: translate(0,0);
-  transition: all 300ms ease-out;
+  transform: translateY(0);
+  transition: transform 300ms ease-out;
 }
 
 .cardexpand-leave {
-  transform: translate(0,0);
+  will-change: transform;
+  transform: translateY(0);
 }
 
 .cardexpand-leave.cardexpand-leave-active {
-  transform: translate(0,100%);
-  transition: all 300ms ease-out;
+  transform: translateY(100%);
+  transition: transform 300ms ease-out;
 }
 
 .animi-card {
