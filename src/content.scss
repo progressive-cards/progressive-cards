@@ -46,8 +46,16 @@
   }
 }
 
-.cardexpand-enter {
+.mdl-card.view-card {
+  position: fixed;
+  top: 56px;
+  width: 100vw;
+  height: 100vh;
   will-change: transform;
+}
+
+
+.cardexpand-enter {
   transform: translateY(100%);
 }
 

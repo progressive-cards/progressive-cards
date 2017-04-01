@@ -29,6 +29,9 @@ const defines =
 		});
 
 const config = {
+    devServer: {
+      historyApiFallback: true
+    },
 	entry: {
 	  shell: './src/shell.js',
 	  content: './src/content.js'
