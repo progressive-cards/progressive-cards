@@ -17,5 +17,5 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  clients.openWindow('/');
+  clients.openWindow('/notification/4444');
 });
