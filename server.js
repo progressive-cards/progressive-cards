@@ -15,6 +15,10 @@ server.route([
 	    handler: { directory: { path: 'docs', listing: true, index: true } }
 	  }
 	},
+    { method: 'GET', path: '/notifications/4444', config: {
+	    handler: { file: './docs/index.html' }
+	  }
+	},
     { method: 'GET', path: '/latest-deals', config: {
 	    handler: { file: './latest-deals.json' }
 	  }
