@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 import arrowImage from 'assets/ic_arrow_back_black_36dp.png';
-import flightImage from 'assets/flight_takeof.png';
 import flightDelay from './flight_delay.jpg'
+import flightTakeoff from './flight_takeoff.png';
 import flightLand from './flight_land.png'
 
 import  './flight_delay.scss'
@@ -15,7 +15,7 @@ export default class NotificationView extends React.Component {
          <div className="mdl-card__title"
            style={{
              backgroundImage: 'url( ' + flightDelay + ' )',
-             height: '200px',
+             height: '150px',
              backgroundSize: '100%',
            }}
          >
@@ -25,7 +25,7 @@ export default class NotificationView extends React.Component {
            <h4>Air India Flight AI 222</h4>
         </div>
         <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
-          <h4> <img src={ flightImage } />  India </h4>
+          <h4> <img src={ flightTakeoff } />  India </h4>
           <h5>Departure <s>02:00 AM</s> 02:00 AM</h5>
         </div>
         <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
