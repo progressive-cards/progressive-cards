@@ -11,8 +11,8 @@ server.ext('onPreResponse', corsHeaders)
 server.register(Inert, () => {});
 
 server.route([
-    { method: 'GET', path: '/', config: { 
-	    handler: { file: './rover.json' }
+    { method: 'GET', path: '/{param*}', config: { 
+	    handler: { directory: { path: 'docs', listing: true, index: true } }
 	  }
 	},
     { method: 'GET', path: '/latest-deals', config: {
