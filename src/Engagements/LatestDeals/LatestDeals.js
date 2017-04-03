@@ -16,7 +16,7 @@ export default class LatestDeals extends React.Component {
                <div className="mdl-card__title">
                  <div>
                    <span className="mdl-typography--subhead" > Latest Deals </span>
-                   <h3>{ this.props.title }</h3>
+                   <h3 className="price mdl-color-text--amber-A700" >{ this.props.title }</h3>
                  </div>
                  <div className="image" ><img src={ this.props.image } alt="London" /></div>
                </div>
