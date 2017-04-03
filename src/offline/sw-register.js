@@ -20,7 +20,7 @@ function urlB64ToUint8Array(base64String) {
   return outputArray;
 }
 
-const applicationServerPublicKey = 'BHGQBbpCOtp-IntDTEq8o8Hfo7H2oxPjJfsztxsisf2DhDfeMb3pLOc26qr1rY2mO-_wpmQzMsdE0OHEAiIYaQk';
+const applicationServerPublicKey = 'BL0ylpaii9xPZJ9pIY-_eB4kjWQ4LuTadV7e1s7Np_F4C7EUnL5jHhyL24Mfpq0tvY9sNFtSBU5j4IOQarzDyew';
 const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
 
 export default registration
