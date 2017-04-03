@@ -7,7 +7,7 @@ import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-rou
 import EngagementsContainer from './Engagements/EngagementsContainer.js'
 import EngagementViewContainer from './Engagements/EngagementViewContainer.js'
 import NotificationViewContainer from './Notifications/NotificationViewContainer.js'
-import LatestDealsViewContainer from './LatestDeals/LatestDealsViewContainer.js'
+import LatestDealsViewContainer from 'Engagements/LatestDeals/LatestDealsViewContainer.js'
 import EngagementReducer from './Engagements/reducers/reducers.js'
 import thunk from 'redux-thunk'
 
