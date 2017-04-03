@@ -7,6 +7,7 @@ import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-rou
 import EngagementsContainer from './Engagements/EngagementsContainer.js'
 import EngagementViewContainer from './Engagements/EngagementViewContainer.js'
 import NotificationViewContainer from './Notifications/NotificationViewContainer.js'
+import LatestDealsViewContainer from './LatestDeals/LatestDealsViewContainer.js'
 import EngagementReducer from './Engagements/reducers/reducers.js'
 import thunk from 'redux-thunk'
 
@@ -28,7 +29,7 @@ const AppRoutes = () => { return (
       <Router history={ browserHistory } >
         <Route path="/" component={ EngagementsContainer } >
           <Route path="notification/4444" component={ NotificationViewContainer } />
-          <Route path="deal/4444" component={ EngagementViewContainer } />
+          <Route path="deal/4444" component={ LatestDealsViewContainer } />
           <Route path="promotion/4444" component={ EngagementViewContainer } />
         </Route>
       </Router>
