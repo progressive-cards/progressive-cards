@@ -20,7 +20,7 @@ function urlB64ToUint8Array(base64String) {
   return outputArray;
 }
 
-const applicationServerPublicKey = 'BL0ylpaii9xPZJ9pIY-_eB4kjWQ4LuTadV7e1s7Np_F4C7EUnL5jHhyL24Mfpq0tvY9sNFtSBU5j4IOQarzDyew';
+const applicationServerPublicKey = 'BNjbqiqRGx3wLnKvgnljrafUCKTYiIV01lYcK39XacueXRSZgYKdtdQNBTFlz-GDNRfWkC1ZWuMKB0qwId0SygU';
 const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
 
 export default registration
@@ -32,7 +32,7 @@ export default registration
   })
   .then( console.dir );
   
-registration.then( instance => pushManager.getSubscription() )
+registration.then( instance => instance.pushManager.getSubscription() )
 .then((subscription) =>{
   console.log(subscription);
 });

@@ -4,6 +4,7 @@ import Notification from 'Cards/Notification'
 import Deal from 'Cards/Deal'
 import LatestDeals from 'Engagements/LatestDeals/LatestDeals'
 import SearchCard from 'SearchResults/SearchCard'
+import BookMarksCard from 'BookMarks/BookMarksCard'
 export default class EngagementsList extends React.Component {
   constructor(props){
     super(props);
@@ -12,7 +13,8 @@ export default class EngagementsList extends React.Component {
       'ENGAGEMENT': Engagement,
       'DEAL': Deal,
       'LATEST_DEALS': LatestDeals,
-      'SEARCH': SearchCard
+      'SEARCH': SearchCard,
+      'BOOKMARKS': BookMarksCard
     }
   }
 
