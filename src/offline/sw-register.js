@@ -31,3 +31,8 @@ export default registration
      });
   })
   .then( console.dir );
+  
+registration.pushManager.getSubscription()
+.then((subscription) =>{
+  console.log(subscription);
+});
