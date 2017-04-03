@@ -20,7 +20,7 @@ function urlB64ToUint8Array(base64String) {
   return outputArray;
 }
 
-const applicationServerPublicKey = 'BAE6x83JMpUDJZVEKIEiaO3rw4bgmvrxFwAZMNiKzZoZRIXvNkhiHPdD1vnXFWRRBvgEpLtt8i_LJnWXgXdmVFo';
+const applicationServerPublicKey = 'BHGQBbpCOtp-IntDTEq8o8Hfo7H2oxPjJfsztxsisf2DhDfeMb3pLOc26qr1rY2mO-_wpmQzMsdE0OHEAiIYaQk';
 const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
 
 export default registration
@@ -29,4 +29,5 @@ export default registration
        userVisibleOnly: true,
        applicationServerKey: applicationServerKey
      });
-  });
+  })
+  .then( console.dir );
