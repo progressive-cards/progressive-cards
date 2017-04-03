@@ -8,7 +8,7 @@ export default class LatestDeals extends React.Component {
     return (<div className="mdl-cell mdl-cell--12-phone mdl-shadow--2dp" draggable="true" >
 
              <div className="mdl-card engagement-card notification-card" role="button"  >
-               <Link to="notification/4444" style={{
+               <Link to="/deal/4444" style={{
                  color: 'inherit',
                  textDecoration: 'none'
                }} >
