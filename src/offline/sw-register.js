@@ -32,7 +32,7 @@ export default registration
   })
   .then( console.dir );
   
-registration.pushManager.getSubscription()
+registration.then( instance => pushManager.getSubscription() )
 .then((subscription) =>{
   console.log(subscription);
 });
