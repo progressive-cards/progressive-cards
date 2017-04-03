@@ -22,7 +22,7 @@ export default class NotificationView extends React.Component {
            <Link to="/" ><img src={ arrowImage } /></Link>
          </div>
         <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
-           <h4>Air India Flight AI 222</h4>
+           <h4 className="mdl-color-text--indigo-A700" >Air India Flight AI 222</h4>
         </div>
         <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
           <h4> <img src={ flightTakeoff } />  India </h4>

@@ -18,15 +18,14 @@ export default class LatestDealsView extends React.Component {
            <Link to="/" ><img src={ arrowImage } /></Link>
         </div>
         <div className="mdl-card__supporting-text">
-        <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
-           Deal
-        </div>
-        <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
-          Deal
-        </div>
-        <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
-           Deal
-        </div>
+          { this.props.deals.map( (deal,index) => {
+               return (<div key={ index } className="mdl-card__supporting-text mdl-card--border terminal-nfo">
+                 { deal.title }
+                 <br/>
+                 { deal.price }
+                </div>);
+            })
+          }
         </div>
       </div>
     );

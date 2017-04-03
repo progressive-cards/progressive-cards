@@ -9,13 +9,15 @@ import EngagementViewContainer from './Engagements/EngagementViewContainer.js'
 import NotificationViewContainer from './Notifications/NotificationViewContainer.js'
 import LatestDealsViewContainer from 'Engagements/LatestDeals/LatestDealsViewContainer.js'
 import EngagementReducer from './Engagements/reducers/reducers.js'
+import LatestDealsReducers from './Engagements/reducers/LatestDealsReducers.js'
 import thunk from 'redux-thunk'
 
 // Add the reducer to your store on the `routing` key
 const store = createStore(
   combineReducers({
     routing: routerReducer,
-    deals: EngagementReducer
+    deals: EngagementReducer,
+    latestDeals: LatestDealsReducers
   }),
   applyMiddleware(thunk),
 );

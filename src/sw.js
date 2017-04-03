@@ -5,13 +5,9 @@ sw.router.get(/.(js|css|jpg|png|gif)$/,sw.cacheFirst);
 sw.router.get('/',sw.networkFirst);
 
 self.addEventListener('push', function(event) {
-
-  const title = 'Flight delay';
-  const options = {
-    body: 'Your flight will be delayed by 2 hours',
-    icon: pushImage,
-    badge: pushImage
-  };
+  let data = event.data.json();
+  const title = data.title;
+  const options = data.options;
   var promise = self.registration.showNotification(title, options);
   event.waitUntil(promise);
 });

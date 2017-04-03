@@ -1,4 +1,5 @@
 import React from 'react'
+import Ripple from 'commons/Ripple'
 import { Link } from 'react-router'
 
 export default class Deal extends React.Component {
@@ -9,23 +10,21 @@ export default class Deal extends React.Component {
               <div className="mdl-card__title" style={{
                 backgroundImage: 'url(' + this.props.image + ' )'
               }} >
-                <h2 className="mdl-card__title-text">{ this.props.title }</h2>
+              <div className="mdl-card__title-text " >
+                <h4 className="mdl-color--cyan-300" >{ this.props.title }</h4>
+               </div>
               </div>
               <div className="mdl-card__supporting-text">
-                <span className="mdl-typography--subhead"> From </span> <span className="price" > £450 </span>
+                <span className="mdl-typography--subhead"> From </span> <span className="price mdl-color-text--amber-A700" > £450 </span>
                 <br/>
                 <br/>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Mauris sagittis pellentesque lacus eleifend lacinia...
               </div>
               <div className="mdl-card__actions mdl-card--border">
-                <Link className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" to="deal/4444" >
-                  Book Now
+                <Link className="mdl-button mdl-button--colored " to="deal/4444" >
+                  <Ripple></Ripple>Book Now
                 </Link>
-              </div>
-              <div className="mdl-card__menu">
-                <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                </button>
               </div>
               </div>
            </div>);
