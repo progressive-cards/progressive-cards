@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import arrowImage from 'assets/ic_arrow_back_black_36dp.png';
+import  'Notifications/flight_delay.scss'
 
 export default class LatestDealsView extends React.Component {
 
@@ -16,16 +17,16 @@ export default class LatestDealsView extends React.Component {
         <div className="mdl-card__title">
            <Link to="/" ><img src={ arrowImage } /></Link>
         </div>
-
         <div className="mdl-card__supporting-text">
-        <h3> Delay of 2 hours </h3>
-        Sitting at a boarding gate, watching a storm roll in, waiting to take off in a plane that hasn’t yet
-        arrived from its previous destination, knowing that the airline’s promise of a
-        ’15 min delay’ is only taunting you, can make one feel pretty helpless.
-        in the Southern Hemisphere.
+        <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
+           Deal
         </div>
-        <div className="mdl-card__actions">
-           <a href="#">Wikipedia entry</a>
+        <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
+          Deal
+        </div>
+        <div className="mdl-card__supporting-text mdl-card--border terminal-nfo">
+           Deal
+        </div>
         </div>
       </div>
     );

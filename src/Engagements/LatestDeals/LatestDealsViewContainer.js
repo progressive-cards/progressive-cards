@@ -6,6 +6,7 @@ const mapStateToProps = (state,ownProps) => {
 
   return {
 
+
   };
 }
 
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   return { };
 }
 
-const NotificationViewContainer = connect(
+const LatestDealsViewContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(LatestDealsView)
