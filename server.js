@@ -17,6 +17,9 @@ server.route([
 	},
     { method: 'GET', path: '/notification/4444', config: {
 	    handler: { file: 'docs/index.html' }
+	  },
+    { method: 'GET', path: '/deal/4444', config: {
+	    handler: { file: 'docs/index.html' }
 	  }
 	},
     { method: 'GET', path: '/latest-deals', config: {
