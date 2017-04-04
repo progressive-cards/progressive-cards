@@ -1,0 +1,14 @@
+@import '../../node_modules/material-design-lite/src/list/_list.scss';
+.deal-list-item {
+  border-radius: 0;
+}
+.deal-list {
+  margin-top: 0;
+
+}
+.list-card {
+  width: 100% !important;
+  h4 {
+    margin: 0;
+  }
+}
