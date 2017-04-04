@@ -4,11 +4,14 @@
 }
 .deal-list {
   margin-top: 0;
-
+  .mdl-list__item-avatar {
+    background-size: cover;
+  }
 }
 .list-card {
   width: 100% !important;
   h4 {
     margin: 0;
   }
+
 }

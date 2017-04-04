@@ -1,5 +1,8 @@
 import React from 'react'
 import 'commons/list.scss'
+import spainImage from './spain.jpg'
+import franceImage from './france.jpg'
+import newYorkImage from './newyork.jpg'
 
 export default class SearchCard extends React.Component {
 
@@ -12,21 +15,27 @@ export default class SearchCard extends React.Component {
                     <ul className="deal-list mdl-list">
                       <li className="mdl-list__item mdl-list__item--two-line">
                         <span className="mdl-list__item-primary-content">
-                          <i className="mdl-list__item-avatar deal-list-item"></i>
+                          <i className="mdl-list__item-avatar deal-list-item" style={{
+                            backgroundImage: 'url(' + spainImage + ')'
+                          }} ></i>
                           <span>Spain</span>
                           <span className="mdl-list__item-sub-title">6th April</span>
                         </span>
                       </li>
                       <li className="mdl-list__item mdl-list__item--two-line">
                         <span className="mdl-list__item-primary-content">
-                          <i className="mdl-list__item-avatar  deal-list-item"></i>
+                          <i className="mdl-list__item-avatar deal-list-item" style={{
+                            backgroundImage: 'url(' + franceImage + ')'
+                          }} ></i>
                           <span>Heathrow to France</span>
                           <span className="mdl-list__item-sub-title">10 April</span>
                         </span>
                       </li>
                       <li className="mdl-list__item mdl-list__item--two-line">
                         <span className="mdl-list__item-primary-content">
-                          <i className="mdl-list__item-avatar  deal-list-item"></i>
+                          <i className="mdl-list__item-avatar deal-list-item" style={{
+                            backgroundImage: 'url(' + newYorkImage + ')'
+                          }} ></i>
                           <span>New York</span>
                           <span className="mdl-list__item-sub-title">May 20</span>
                         </span>
