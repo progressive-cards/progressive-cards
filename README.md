@@ -1,2 +1,2 @@
-# inspired-
-People who inspired m
+# Progressive Travel
+Just another demonstration of Progressive Web App

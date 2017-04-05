@@ -11,10 +11,6 @@ server.ext('onPreResponse', corsHeaders)
 server.register(Inert, () => {});
 
 server.route([
-    { method: 'GET', path: '/static/{param*}', config: {
-	    handler: { directory: { path: 'docs/static', listing: true, index: true } }
-	  }
-	},
     { method: 'GET', path: '/{param*}', config: {
 	    handler: { directory: { path: 'docs', listing: true, index: true } }
 	  }
@@ -25,6 +21,15 @@ server.route([
 	}
 ]);
 
+// return index.html for everything else
+server.ext('onPostHandler', (request, reply) => {
+  console.log('WORD');
+  const response = request.response;
+  if (response.isBoom && response.output.statusCode === 404) {
+    return reply.file('docs/index.html');
+  }
+  return reply.continue();
+});
 
 server.start((err) => {
 
