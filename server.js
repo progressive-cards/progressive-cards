@@ -11,15 +11,12 @@ server.ext('onPreResponse', corsHeaders)
 server.register(Inert, () => {});
 
 server.route([
-    { method: 'GET', path: '/{param*}', config: { 
-	    handler: { directory: { path: 'docs', listing: true, index: true } }
+    { method: 'GET', path: '/static/{param*}', config: {
+	    handler: { directory: { path: 'docs/static', listing: true, index: true } }
 	  }
 	},
-    { method: 'GET', path: '/notification/4444', config: {
-	    handler: { file: 'docs/index.html' }
-	  },
-    { method: 'GET', path: '/deal/4444', config: {
-	    handler: { file: 'docs/index.html' }
+    { method: 'GET', path: '/{param*}', config: {
+	    handler: { directory: { path: 'docs', listing: true, index: true } }
 	  }
 	},
     { method: 'GET', path: '/latest-deals', config: {

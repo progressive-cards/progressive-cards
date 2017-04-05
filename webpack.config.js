@@ -39,8 +39,8 @@ const config = {
 	output: {
 		filename: '[name].build.js',
 	    chunkFilename: '[name]-[id].js',
-		path: path.join(__dirname, 'docs'),
-		publicPath: '/',
+		path: path.join(__dirname, 'docs/static'),
+		publicPath: '/static/',
 	},
 	module: {
 		loaders: [{
@@ -80,9 +80,9 @@ const config = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			filename: 'index.html',
+			filename: '../index.html',
 			template: path.join(__dirname, 'src', 'index.tpl.html'),
-			MANIFEST_FILENAME: 'manifest.json' 
+			MANIFEST_FILENAME: '/static/manifest.json'
 		}),
 		new webpack.LoaderOptionsPlugin({
 			options: {
